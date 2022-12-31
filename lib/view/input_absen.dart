@@ -67,7 +67,7 @@ class _inputAbsenPageState extends State<inputAbsenPage> {
             onChanged: (value) {
               setState(() {
                 Kelas = value.toString();
-                print(Kelas);
+                // print(Kelas);
               });
             },
           ),
@@ -75,7 +75,7 @@ class _inputAbsenPageState extends State<inputAbsenPage> {
           ElevatedButton(
               onPressed: () => {
                 _selectDate(context),
-                print(selectedDate.day + selectedDate.month + selectedDate.year )
+                // print(selectedDate.day + selectedDate.month + selectedDate.year )
               },
               
               child: Text('Pilih Tanggal'),
@@ -96,7 +96,7 @@ class _inputAbsenPageState extends State<inputAbsenPage> {
               Tgl = "${selectedDate.toLocal()}".split(' ')[0];
               inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
                 (value) {
-                  print('data ${value.Nama} berhasil diinput');
+                  // print('data ${value.Nama} berhasil diinput');
                 }
               );
               Navigator.pop(context);

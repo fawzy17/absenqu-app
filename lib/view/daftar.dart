@@ -207,10 +207,10 @@ class _DaftarPageState extends State<DaftarPage> {
                             prefs.setString('$Npm+Nama', Nama);
                             prefs.setString('$Npm+Npm', Npm);
                             prefs.setString('$Npm+Pass', Pass);
-                            print(prefs.getString('$Npm+Email'));
-                            print(prefs.getString('$Npm+Nama'));
-                            print(prefs.getString('$Npm+Npm'));
-                            print(prefs.getString('$Npm+Pass'));
+                            // print(prefs.getString('$Npm+Email'));
+                            // print(prefs.getString('$Npm+Nama'));
+                            // print(prefs.getString('$Npm+Npm'));
+                            // print(prefs.getString('$Npm+Pass'));
                             Navigator.push(context, MaterialPageRoute(builder:(context) => MasukPage(), ));
                           }
                         } ,

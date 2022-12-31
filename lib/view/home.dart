@@ -79,6 +79,7 @@ class _homePageState extends State<homePage> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       //DRAWER
       drawer: Drawer(
         child: SingleChildScrollView(
@@ -366,234 +367,237 @@ class _homePageState extends State<homePage> {
                                 ],
                               ),
                             ),
-                            content: Container(
-                              height: MediaQuery.of(context).size.height*.6,
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                            content: SingleChildScrollView(
+                              physics: ClampingScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height*.7,
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
                                   SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 10,
-                                  ),
-                                TextField(
-                                controller: tcNama,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      height: 10,
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik namamu disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 5,
-                                  ),
-                                TextField(
-                                  keyboardType: TextInputType.number,
-                                controller: tcNpm,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik npm disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-
-                                  //BOX A
-                                  Container(
-                                    child: Center(
-                                      child: Text('A',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xfe00FFA7),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.white),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-
-                                  //BOX B
-                                  Container(
-                                    child: Center(
-                                      child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-
-                                  //BOX C
-                                  Container(
-                                    child: Center(
-                                      child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-
-
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-
-                                  //BOX D
-                                  Container(
-                                    child: Center(
-                                      child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                               SizedBox(
-                                    height: 40,
-                                  ),
-                              Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE00EA99)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Ket = 'Hadir';
-                                    Kelas = '5A';
-                                    Tgl = '$actualDay, $actualDate';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.push(context, MaterialPageRoute(builder:(context) => notifikasiPage(),));
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
-                                    ),
-                                  ),
+                                  TextField(
+                                  controller: tcNama,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik namamu disini...",
+                                      fillColor: Colors.transparent),
                                 ),
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE066997)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5A';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Tidak Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                  SizedBox(
+                                      height: 5,
+                                    ),
+                                  TextField(
+                                    keyboardType: TextInputType.number,
+                                  controller: tcNpm,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik npm disini...",
+                                      fillColor: Colors.transparent),
+                                ),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                            
+                                    //BOX A
+                                    Container(
+                                      child: Center(
+                                        child: Text('A',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xfe00FFA7),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Colors.white),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                            
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                            
+                                    //BOX B
+                                    Container(
+                                      child: Center(
+                                        child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                            
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                            
+                                    //BOX C
+                                    Container(
+                                      child: Center(
+                                        child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                            
+                            
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                            
+                                    //BOX D
+                                    Container(
+                                      child: Center(
+                                        child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                 SizedBox(
+                                      height: 20,
+                                    ),
+                                Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE00EA99)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Ket = 'Hadir';
+                                      Kelas = '5A';
+                                      Tgl = '$actualDay, $actualDate';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.push(context, MaterialPageRoute(builder:(context) => notifikasiPage(),));
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ],
-                              )
-                              ],),
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE066997)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5A';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Tidak Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  ],
+                                )
+                                ],),
+                              ),
                             ),
                           ),
                           );
@@ -646,222 +650,225 @@ class _homePageState extends State<homePage> {
                                 ],
                               ),
                             ),
-                            content: Container(
-                              height: MediaQuery.of(context).size.height*.6,
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                            content: SingleChildScrollView(
+                              physics: ClampingScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height*.7,
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
                                   SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 10,
-                                  ),
-                                TextField(
-                                  controller: tcNama,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      height: 10,
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik namamu disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 5,
-                                  ),
-                                TextField(
-                                  keyboardType: TextInputType.number,
-                                controller: tcNpm,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik npm disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    child: Center(
-                                      child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('B',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xfe00FFA7),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.white),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                               SizedBox(
-                                    height: 40,
-                                  ),
-                              Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE00EA99)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5B';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
-                                    ),
-                                  ),
+                                  TextField(
+                                    controller: tcNama,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik namamu disini...",
+                                      fillColor: Colors.transparent),
                                 ),
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE066997)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5B';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Tidak Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                  SizedBox(
+                                      height: 5,
+                                    ),
+                                  TextField(
+                                    keyboardType: TextInputType.number,
+                                  controller: tcNpm,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik npm disini...",
+                                      fillColor: Colors.transparent),
+                                ),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      child: Center(
+                                        child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('B',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xfe00FFA7),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Colors.white),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                 SizedBox(
+                                      height: 40,
+                                    ),
+                                Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE00EA99)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5B';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ],
-                              )
-                              ],),
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE066997)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5B';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Tidak Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  ],
+                                )
+                                ],),
+                              ),
                             ),
                           ),
                           );
@@ -922,222 +929,225 @@ class _homePageState extends State<homePage> {
                                 ],
                               ),
                             ),
-                            content: Container(
-                              height: MediaQuery.of(context).size.height*.6,
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                            content: SingleChildScrollView(
+                              physics: ClampingScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height*.7,
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
                                   SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 10,
-                                  ),
-                                TextField(
-                                  controller: tcNama,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      height: 10,
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik namamu disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 5,
-                                  ),
-                                TextField(
-                                  keyboardType: TextInputType.number,
-                                  controller: tcNpm,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik npm disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    child: Center(
-                                      child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('C',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xfe00FFA7),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.white),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                               SizedBox(
-                                    height: 40,
-                                  ),
-                              Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE00EA99)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5C';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
-                                    ),
-                                  ),
+                                  TextField(
+                                    controller: tcNama,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik namamu disini...",
+                                      fillColor: Colors.transparent),
                                 ),
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE066997)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5C';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Tidak Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                   Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                  SizedBox(
+                                      height: 5,
+                                    ),
+                                  TextField(
+                                    keyboardType: TextInputType.number,
+                                    controller: tcNpm,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik npm disini...",
+                                      fillColor: Colors.transparent),
+                                ),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      child: Center(
+                                        child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('C',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xfe00FFA7),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Colors.white),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('D',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                 SizedBox(
+                                      height: 40,
+                                    ),
+                                Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE00EA99)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5C';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ],
-                              )
-                              ],),
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE066997)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5C';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Tidak Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                     Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  ],
+                                )
+                                ],),
+                              ),
                             ),
                           ),
                           );
@@ -1193,222 +1203,225 @@ class _homePageState extends State<homePage> {
                                 ],
                               ),
                             ),
-                            content: Container(
-                              height: MediaQuery.of(context).size.height*.6,
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                            content: SingleChildScrollView(
+                              physics: ClampingScrollPhysics(),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height*.7,
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
                                   SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('Nama',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 10,
-                                  ),
-                                TextField(
-                                  controller: tcNama,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
+                                      height: 10,
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik namamu disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                                Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                                SizedBox(
-                                    height: 5,
-                                  ),
-                                TextField(
-                                  keyboardType: TextInputType.number,
-                                  controller: tcNpm,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    hintStyle: TextStyle(color: Color(0xFE00EA99)),
-                                    hintText: "Ketik npm disini...",
-                                    fillColor: Colors.transparent),
-                              ),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    child: Center(
-                                      child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFEC7F0FF),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Color(0xfe00FFA7)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Container(
-                                    child: Center(
-                                      child: Text('D',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                                    ),
-                                    height: 50,
-                                    width: 50,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xfe00FFA7),
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(color: Colors.white),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.4),
-                                          spreadRadius: 0,
-                                          blurRadius: 3,
-                                          offset: Offset(0, 5),
-                                          blurStyle: BlurStyle.normal
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                               SizedBox(
-                                    height: 40,
-                                  ),
-                              Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
-                              SizedBox(
-                                    height: 10,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE00EA99)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5D';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
-                                    ),
-                                  ),
+                                  TextField(
+                                    controller: tcNama,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik namamu disini...",
+                                      fillColor: Colors.transparent),
                                 ),
-                                  TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xfE066997)),
-                                  onPressed: () {
-                                    Nama = tcNama.text;
-                                    Npm = tcNpm.text;
-                                    Kelas = '5D';
-                                    Tgl = '$actualDay, $actualDate';
-                                    Ket = 'Tidak Hadir';
-                                    inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
-                                      (value) {
-                                        print('data ${value.Nama} berhasil diinput');
-                                      }
-                                    );
-                                    Navigator.of(context).push(_createRoute());
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
-                                    child: Text(
-                                      "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                  Text('NPM',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                  SizedBox(
+                                      height: 5,
+                                    ),
+                                  TextField(
+                                    keyboardType: TextInputType.number,
+                                    controller: tcNpm,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(width: 1,color: Color(0xFE00EA99)),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ),
+                                      hintStyle: TextStyle(color: Color(0xFE00EA99)),
+                                      hintText: "Ketik npm disini...",
+                                      fillColor: Colors.transparent),
+                                ),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Text('Kelas',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      child: Center(
+                                        child: Text('A',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('B',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('C',style: TextStyle(color: Color(0xfe066997),fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFEC7F0FF),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color(0xfe00FFA7)),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      child: Center(
+                                        child: Text('D',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
+                                      ),
+                                      height: 50,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xfe00FFA7),
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Colors.white),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black.withOpacity(0.4),
+                                            spreadRadius: 0,
+                                            blurRadius: 3,
+                                            offset: Offset(0, 5),
+                                            blurStyle: BlurStyle.normal
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                 SizedBox(
+                                      height: 40,
+                                    ),
+                                Text('Keterangan',style: TextStyle(fontSize: 16,color: Color(0xFE066997),fontWeight: FontWeight.bold),),
+                                SizedBox(
+                                      height: 10,
+                                    ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE00EA99)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5D';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "HADIR",style: TextStyle(color: Colors.white,fontSize: 18)
+                                      ),
                                     ),
                                   ),
-                                ),
-                                ],
-                              )
-                              ],),
+                                    TextButton(
+                                    style: TextButton.styleFrom(
+                                        backgroundColor: Color(0xfE066997)),
+                                    onPressed: () {
+                                      Nama = tcNama.text;
+                                      Npm = tcNpm.text;
+                                      Kelas = '5D';
+                                      Tgl = '$actualDay, $actualDate';
+                                      Ket = 'Tidak Hadir';
+                                      inputAbsen.connectAPI(Nama, Npm, Kelas, Tgl, Ket).then(
+                                        (value) {
+                                          // print('data ${value.Nama} berhasil diinput');
+                                        }
+                                      );
+                                      Navigator.of(context).push(_createRoute());
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(
+                                        "TIDAK HADIR",style: TextStyle(color: Colors.white,fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  ],
+                                )
+                                ],),
+                              ),
                             ),
                           ),
                           );

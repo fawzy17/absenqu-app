@@ -143,8 +143,6 @@ class _MasukPageState extends State<MasukPage> {
                           final SharedPreferences prefs = await _prefs;
                           Npm = _tcNpm.text;
                           Pass = _tcPass.text;
-                          print('nama ${prefs.getString('$Npm+Pass')}');
-                          print(prefs.getString('$Npm+Npm'));
                           if (Npm == '' || Pass == '') {
                             
                           } else if(Pass != prefs.getString('$Npm+Pass') || prefs.getString('$Npm+Npm') == null) {
